@@ -34,19 +34,15 @@ function test_c(;verbose=true)
   bins = k0^2
   ind(x) = floor(x*9)
 
-  U = rand(n)
-  Ux = U[1:2:end]
-  Uy = U[2:2:end]
+  U = rand(n,2)
 
-  n = n/2
-
-  Data = [Float64(k0 * ind(Ux[i]) + ind(Uy[i])) for i=1:length(Ux)]
+  Data = [Float64(k0 * ind(U[i,1]) + ind(U[i,2])) for i=1:n]
 
   (range, counts) = hist(Data[:], -1:80)
 
   D = sum((counts - n/bins).^2/(n/bins))
 
-  verbose ? say("n=$(n/2), k0=$k0, bins=$bins, D=$(round(D*1000)/1000) $(D>XI80?"> $XI80, Reject H0, bad random":"< $XI80, Accept H0, good random")") : nothing
+  verbose ? say("n=$n, k0=$k0, bins=$bins, D=$(round(D*1000)/1000) $(D>XI80?"> $XI80, Reject H0, bad random":"< $XI80, Accept H0, good random")") : nothing
 
   D
 end
