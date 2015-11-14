@@ -4,8 +4,13 @@ test_a()
 
 # question (b)
 say("== (b)")
-m = 100000
+m = 10000
 
-D = test_a(verbose=false)
+tic()
+D = [test_a(verbose=false) for i=1:m]
+toc()
 
-say("D=$D")
+p = PyPlot.plt[:hist](D, 100);
+q = plot(50:150, chi_square(50:150, 100)*m);
+
+say("$(sum(D.>XI)/m) percent outside $XI.")

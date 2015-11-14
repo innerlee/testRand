@@ -21,3 +21,8 @@ function test_a(;verbose=true)
 
   D
 end
+
+# dist
+function chi_square(x, nu)
+  x.^(nu/2-1).*exp(-x/2)./(2^(nu/2)*gamma(nu/2))
+end
