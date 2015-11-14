@@ -8,8 +8,8 @@ Outputs:
 
 (b):
 
-<img src="https://github.com/innerlee/testRand/blob/master/figure_1.png" height=300px />
+<img src="https://github.com/innerlee/testRand/blob/master/figure_1.png" />
 
 (d):
 
-<img src="https://github.com/innerlee/testRand/blob/master/figure_2.png" height=300px />
+<img src="https://github.com/innerlee/testRand/blob/master/figure_2.png" />
