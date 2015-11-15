@@ -18,7 +18,7 @@ function test_a(;verbose=true)
 
   D = sum((counts - n/bins).^2/(n/bins))
 
-  verbose ? say("n=$n, bins=$bins, D=$(round(D*1000)/1000) $(D>XI100?"> $XI100, Reject H0, bad random":"< $XI100, Accept H0, good random")") : nothing
+  verbose ? say("n=$n, bins=$bins, D=$(round(D*1000)/1000) $(D>XI100?"> $XI100, Reject H0, bad random":"< $XI100, Fail to reject H0, good random")") : nothing
 
   D
 end
@@ -42,7 +42,7 @@ function test_c(;verbose=true)
 
   D = sum((counts - n/bins).^2/(n/bins))
 
-  verbose ? say("n=$n, k0=$k0, bins=$bins, D=$(round(D*1000)/1000) $(D>XI80?"> $XI80, Reject H0, bad random":"< $XI80, Accept H0, good random")") : nothing
+  verbose ? say("n=$n, k0=$k0, bins=$bins, D=$(round(D*1000)/1000) $(D>XI80?"> $XI80, Reject H0, bad random":"< $XI80, Fail to reject H0, good random")") : nothing
 
   D
 end
